@@ -9,8 +9,9 @@ function App() {
         textAlign: "center",
         fontSize: "35px",
         borderColor: "15px solid black",
+        borderRadius: "50px",
         borderStyle: "solid",
-        margin: "100px",
+        margin: "160px",
       }}
     >
       <h1> Margaret Cezar Profile Card</h1>
@@ -65,30 +66,38 @@ function Intro() {
 function Skilllist() {
   return (
     <div
-      className="Skill-list"
+      className="Skilllist"
       style={{
+        display: "flex",
+        flexDirection: "column",
         textAlign: "center",
-        fontSize: "20px",
-        marginTop: "50px",
-        gap: "10px",
-        border: "1px solid black",
-        margin: "10px 30px",
-        padding: "10px",
       }}
     >
       <h2>Skills</h2>
-      <Skill skill="HTML" emoji="🖥️" color="yellow" />
-      <Skill skill="CSS" emoji="🎨" color="green" />
-      <Skill skill="JavaScript" emoji="🐢" color="blue" />
-      <Skill skill="React" emoji="⚛️" color="purple" />
-      <Skill skill="NodeJS" emoji="📚" color="orangered" />
+      <Skill skill="HTML5" emoji="🖥️" color="#FFD1DC" />
+      <Skill skill="CSS3" emoji="🎨" color="#AFEEEE" />
+      <Skill skill="JavaScript" emoji="🐢" color="#E6E6FA" />
+      <Skill skill="React" emoji="⚛️" color="#98FB98" />
+      <Skill skill="NodeJS" emoji="📚" color="#FFDAB8" />
     </div>
   );
 }
 
 function Skill({ skill, emoji, color }) {
   return (
-    <div className="Skill" style={{ backgroundColor: color }}>
+    <div
+      className="Skill"
+      style={{
+        backgroundColor: color,
+        fontSize: "30px",
+        fontWeight: "bold",
+        marginTop: "20px",
+        gap: "10px",
+        margin: "20px 20px",
+        padding: "10px 10px",
+        borderRadius: "50px",
+      }}
+    >
       <p>{skill}</p>
       <p>{emoji}</p>
     </div>
