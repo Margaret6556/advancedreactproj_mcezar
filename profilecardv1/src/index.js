@@ -1,6 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+const skills = [
+  {
+    skill: "HTML5",
+    level: "advanced",
+    color: "#FFD1DC",
+  },
+  {
+    skill: "CSS3",
+    level: "advanced",
+    color: "#AFEEEE",
+  },
+  {
+    skill: "JavaScript",
+    level: "intermediate",
+    color: "#E6E6FA",
+  },
+  {
+    skill: "React",
+    level: "intermediate",
+    color: "#98FB98",
+  },
+  {
+    skill: "NodeJS ",
+    level: "intermediate",
+    color: "#FFDAB8",
+  },
+];
 function App() {
   return (
     <div
@@ -29,6 +56,7 @@ function Avatar() {
       src="/margaretC.png"
       alt="Avatar"
       style={{
+        display: "inline-flex",
         width: "50%",
         height: "auto",
         marginTop: "-240px",
@@ -42,12 +70,12 @@ function Intro() {
   return (
     <div
       className="Intro"
-      style={{ textAlign: "center", fontSize: "24px", marginTop: "50px" }}
+      style={{ textAlign: "center", fontSize: "30px", margin: "60px 40px" }}
     >
       <h2>Introduction</h2>
       <p>
-        I create impactful startups. 💗 Thanks for visiting my profile. I am an
-        experienced founder.
+        💗 Thanks for visiting my profile. I am an experienced founder. I create
+        impactful startups. 💗
       </p>
       <br />
       <p>
@@ -74,32 +102,40 @@ function Skilllist() {
       }}
     >
       <h2>Skills</h2>
-      <Skill skill="HTML5" emoji="🖥️" color="#FFD1DC" />
-      <Skill skill="CSS3" emoji="🎨" color="#AFEEEE" />
-      <Skill skill="JavaScript" emoji="🐢" color="#E6E6FA" />
-      <Skill skill="React" emoji="⚛️" color="#98FB98" />
-      <Skill skill="NodeJS" emoji="📚" color="#FFDAB8" />
+      {skills.map((skill) => (
+        <Skill
+          key={skill.skill}
+          skill={skill.skill}
+          level={skill.level}
+          color={skill.color}
+        />
+      ))}
     </div>
   );
 }
 
-function Skill({ skill, emoji, color }) {
+function Skill({ skill, level, color }) {
   return (
     <div
       className="Skill"
       style={{
         backgroundColor: color,
+        textAlign: "center",
+        display: "flex",
         fontSize: "30px",
         fontWeight: "bold",
-        marginTop: "20px",
+        margin: "20px 720px",
         gap: "10px",
-        margin: "20px 20px",
         padding: "10px 10px",
-        borderRadius: "50px",
+        borderRadius: "15px",
       }}
     >
-      <p>{skill}</p>
-      <p>{emoji}</p>
+      <span>{skill}</span>
+      <span>
+        {level === "beginner" && "  👶🏻"}
+        {level === "intermediate" && "  👍🏻"}
+        {level === "advanced" && "  💪🏻"}
+      </span>
     </div>
   );
 }
