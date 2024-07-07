@@ -56,7 +56,6 @@ function Avatar() {
       src="/margaretC.png"
       alt="Avatar"
       style={{
-        display: "inline-flex",
         width: "50%",
         height: "auto",
         marginTop: "-240px",
@@ -68,10 +67,7 @@ function Avatar() {
 
 function Intro() {
   return (
-    <div
-      className="Intro"
-      style={{ textAlign: "center", fontSize: "30px", margin: "60px 40px" }}
-    >
+    <div className="Intro" style={{ fontSize: "30px", margin: "60px 40px" }}>
       <h2>Introduction</h2>
       <p>
         💗 Thanks for visiting my profile. I am an experienced founder. I create
@@ -98,7 +94,6 @@ function Skilllist() {
       style={{
         display: "flex",
         flexDirection: "column",
-        textAlign: "center",
       }}
     >
       <h2>Skills</h2>
@@ -122,10 +117,9 @@ function Skill({ skill, level, color }) {
         backgroundColor: color,
         textAlign: "center",
         display: "flex",
-        fontSize: "30px",
+        fontSize: "25px",
         fontWeight: "bold",
-        margin: "20px 720px",
-        gap: "10px",
+        margin: "10px 10px",
         padding: "10px 10px",
         borderRadius: "15px",
       }}
